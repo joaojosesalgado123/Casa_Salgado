@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestão de produtos — Casa Salgado</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Yellowtail&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="gestao">
+
+  <header class="gestao-cabecalho">
+    <div class="contentor">
+      <h1><span class="script">Casa Salgado</span> · Gestão de produtos</h1>
+      <a class="botao botao--secundario" href="index.html">Ver o site</a>
+    </div>
+  </header>
+
+  <main class="contentor">
+
+    <div class="estado-msg" id="mensagem" role="status" aria-live="polite"></div>
+
+    <!-- Passo 1: ligação ao GitHub (só é preciso configurar uma vez) -->
+    <section class="painel" id="painelConfig">
+      <h2>1. Ligação (só na primeira vez)</h2>
+      <p>Para as alterações aparecerem no site, esta página precisa de uma chave de acesso. Peça ajuda ao João para a criar — depois fica guardada neste computador.</p>
+      <div class="campo">
+        <label for="campoToken">Chave de acesso (token do GitHub)</label>
+        <input type="password" id="campoToken" autocomplete="off" placeholder="github_pat_..." />
+        <p class="ajuda">Guardada apenas neste computador. Nunca a envie por e-mail nem a mostre a estranhos.</p>
+      </div>
+      <button class="botao botao--principal" id="botaoGuardarToken">Guardar a chave</button>
+      <button class="botao botao--secundario" id="botaoApagarToken">Apagar a chave deste computador</button>
+    </section>
+
+    <!-- Passo 2: os produtos -->
+    <section class="painel">
+      <h2>2. Os produtos da loja</h2>
+      <p>Aqui pode acrescentar, alterar ou apagar produtos. No fim, carregue no botão verde em baixo para os enviar para o site.</p>
+      <button class="botao botao--principal botao--grande" id="botaoNovo">➕ Acrescentar produto</button>
+      <div class="lista-gestao" id="listaProdutos" style="margin-top:20px"></div>
+    </section>
+
+    <!-- Formulário de produto (aparece ao acrescentar/alterar) -->
+    <section class="painel" id="painelFormulario" hidden>
+      <h2 id="tituloFormulario">Acrescentar produto</h2>
+      <div class="campo">
+        <label for="fNome">Nome do produto</label>
+        <input type="text" id="fNome" placeholder="Ex.: Dobradiças de latão" />
+      </div>
+      <div class="campo">
+        <label for="fCategoria">Categoria</label>
+        <select id="fCategoria">
+          <option>Ferragens</option>
+          <option>Ferramentas</option>
+          <option>Drogaria</option>
+          <option>Cortinados</option>
+          <option>Outros</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="fPreco">Preço</label>
+        <input type="text" id="fPreco" placeholder="Ex.: 4,50 € ou desde 1,00 €" />
+        <p class="ajuda">Pode escrever como quiser: «2,50 € / par», «sob consulta», etc.</p>
+      </div>
+      <div class="campo">
+        <label for="fDescricao">Descrição curta</label>
+        <textarea id="fDescricao" rows="3" placeholder="Uma ou duas frases sobre o produto"></textarea>
+      </div>
+      <div class="campo">
+        <label for="fDisponivel">Há em loja?</label>
+        <select id="fDisponivel">
+          <option value="sim">Sim, disponível</option>
+          <option value="nao">Não, esgotado</option>
+        </select>
+      </div>
+      <button class="botao botao--principal" id="botaoConfirmarProduto">Confirmar</button>
+      <button class="botao botao--secundario" id="botaoCancelarProduto">Cancelar</button>
+    </section>
+
+  </main>
+
+  <!-- Barra fixa em baixo com o botão de publicar -->
+  <div class="barra-acoes">
+    <div class="contentor">
+      <span id="resumoAlteracoes">Sem alterações por enviar.</span>
+      <button class="botao botao--principal botao--grande" id="botaoPublicar" disabled>
+        💾 Guardar alterações no site
+      </button>
+    </div>
+  </div>
+
+  <script src="js/gestao.js"></script>
+</body>
+</html>

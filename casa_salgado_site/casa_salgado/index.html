@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Salgado — Ferragens e Drogaria · Viana do Castelo</title>
+  <meta name="description" content="Casa Salgado: ferragens, drogaria e cortinados no centro histórico de Viana do Castelo há mais de 70 anos. Rua Gago Coutinho 67." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Yellowtail&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navegação -->
+  <nav class="nav">
+    <div class="nav__interior">
+      <a class="nav__marca" href="#topo">Casa Salgado</a>
+      <div class="nav__ligacoes">
+        <a href="#catalogo">Produtos</a>
+        <a href="#historia">A Casa</a>
+        <a href="#contactos">Contactos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Herói: o letreiro esmaltado com o serrote -->
+  <header class="heroi" id="topo">
+    <div class="letreiro" aria-label="Letreiro da Casa Salgado">
+      <!-- Logo recriado a partir do letreiro original da montra -->
+      <svg viewBox="0 0 640 220" role="img" aria-labelledby="tituloLogo" xmlns="http://www.w3.org/2000/svg">
+        <title id="tituloLogo">Casa Salgado — o serrote, símbolo da casa</title>
+        <g stroke="#1b1713" stroke-width="4" fill="none" stroke-linejoin="round">
+          <!-- Lâmina do serrote -->
+          <path d="M20 96 L460 78 L460 132
+                   L452 140 L444 132 L436 140 L428 132 L420 140 L412 132 L404 140 L396 132
+                   L388 140 L380 132 L372 140 L364 132 L356 140 L348 132 L340 140 L332 132
+                   L324 140 L316 132 L308 140 L300 132 L292 140 L284 132 L276 140 L268 132
+                   L260 140 L252 132 L244 140 L236 132 L228 140 L220 132 L212 140 L204 132
+                   L196 140 L188 132 L180 140 L172 132 L164 140 L156 132 L148 140 L140 132
+                   L132 140 L124 132 L116 140 L108 132 L100 140 L92 132 L84 140 L76 132
+                   L68 140 L60 132 L52 140 L44 132 L36 140 L28 132 L20 128 Z"
+                fill="#fbf9f1"/>
+          <!-- Punho clássico do serrote -->
+          <path d="M460 70 C505 55 560 55 596 78 C620 93 626 118 612 140
+                   C600 158 578 166 552 164 L468 150 L460 132 Z"
+                fill="#fbf9f1"/>
+          <path d="M497 92 C520 82 552 84 572 98 C586 108 588 122 578 132
+                   C566 143 544 145 526 138 L502 128 C492 122 488 108 497 92 Z"
+                fill="#f3efe3"/>
+          <!-- Parafusos do punho -->
+          <circle cx="486" cy="120" r="7" fill="#1b1713" stroke="none"/>
+          <circle cx="590" cy="112" r="7" fill="#1b1713" stroke="none"/>
+        </g>
+        <!-- Caixa "CASA" -->
+        <g>
+          <rect x="42" y="86" width="118" height="34" fill="#1b1713"/>
+          <text x="101" y="111" text-anchor="middle" fill="#f3efe3"
+                font-family="'Archivo', sans-serif" font-weight="800"
+                font-size="24" letter-spacing="8">CASA</text>
+        </g>
+        <!-- "Salgado" em escrita corrida sobre a lâmina -->
+        <text x="180" y="150" fill="#1b1713"
+              font-family="'Yellowtail', cursive" font-size="92">Salgado</text>
+        <!-- Legenda -->
+        <text x="320" y="200" text-anchor="middle" fill="#7e3327"
+              font-family="'IBM Plex Mono', monospace" font-weight="600"
+              font-size="17" letter-spacing="6">FERRAGENS · DROGARIA · CORTINADOS</text>
+      </svg>
+    </div>
+    <p class="heroi__lema">Vendemos ao parafuso, cortamos à medida e ainda&nbsp;atendemos&nbsp;pelo&nbsp;nome.</p>
+    <p class="heroi__desde">No centro histórico de Viana do Castelo desde 1954</p>
+  </header>
+  <div class="dentes" aria-hidden="true"></div>
+
+  <!-- Barra de informação rápida -->
+  <div class="barra-info">
+    <div class="barra-info__interior">
+      <div class="barra-info__item">
+        <strong>Morada</strong>
+        Rua Gago Coutinho 67, Viana do Castelo
+      </div>
+      <div class="barra-info__item">
+        <strong>Telefone</strong>
+        <a href="tel:+351258822751">258 822 751</a>
+      </div>
+      <div class="barra-info__item">
+        <strong>Horário de hoje</strong>
+        <span id="horarioHoje">Seg–Sex 9h–12h30 · 14h–19h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catálogo -->
+  <section class="seccao seccao--papel" id="catalogo">
+    <div class="contentor">
+      <h2 class="seccao__titulo">O que temos <span class="script">na gaveta</span></h2>
+      <p class="seccao__sub">Uma amostra do que encontra na loja. Não está aqui? Pergunte — em 70 anos de gavetas, é raro não termos.</p>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="grelha-produtos" id="grelhaProdutos" aria-live="polite"></div>
+
+      <p class="aviso-catalogo">Os preços podem ser ajustados na loja. Para encomendas ou medidas especiais, ligue-nos ou passe por cá.</p>
+    </div>
+  </section>
+  <div class="dentes dentes--oxido" aria-hidden="true"></div>
+
+  <!-- História -->
+  <section class="seccao" id="historia">
+    <div class="contentor historia">
+      <div>
+        <h2 class="seccao__titulo">Uma casa <span class="script">com história</span></h2>
+        <p>A Casa Salgado abriu portas há mais de setenta anos na Rua Gago Coutinho, e pouco mudou desde então — e é assim que gostamos. As gavetas de madeira continuam cheias de parafusos vendidos à unidade, os varões de cortinado cortam-se à medida na hora, e o serrote do letreiro é o mesmo que os avós dos nossos clientes conheceram.</p>
+        <p>Hoje, como sempre, quem entra é atendido com tempo e conselho. Se não soubermos resolver, conhecemos quem saiba.</p>
+      </div>
+      <div class="historia__foto">
+        <img src="assets/fachada.jpeg" alt="Montra da Casa Salgado, com o letreiro do serrote e a moldura de madeira sobre a fachada de granito" loading="lazy" />
+      </div>
+    </div>
+  </section>
+  <div class="dentes" aria-hidden="true"></div>
+
+  <!-- Contactos e mapa -->
+  <section class="seccao seccao--papel" id="contactos">
+    <div class="contentor">
+      <h2 class="seccao__titulo">Onde <span class="script">nos encontrar</span></h2>
+      <div class="contactos">
+        <div class="ficha">
+          <h3>Morada</h3>
+          <p>Rua Gago Coutinho 67<br />4900-490 Viana do Castelo</p>
+          <h3>Telefone</h3>
+          <p><a href="tel:+351258822751">+351 258 822 751</a></p>
+          <h3>Horário</h3>
+          <ul>
+            <li><span>Segunda-feira</span><span>9h–13h · 14h–19h</span></li>
+            <li><span>Terça a sexta</span><span>9h–12h30 · 14h–19h</span></li>
+            <li><span>Sábado</span><span>9h–13h</span></li>
+            <li><span>Domingo</span><span>Encerrado</span></li>
+          </ul>
+        </div>
+        <div class="mapa">
+          <iframe
+            title="Mapa: Casa Salgado, Rua Gago Coutinho 67, Viana do Castelo"
+            src="https://maps.google.com/maps?q=41.6935334,-8.8264345&z=18&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p class="script">Casa Salgado</p>
+    <p>Ferragens · Drogaria · Cortinados — Viana do Castelo</p>
+    <p><a href="gestao.html">Área de gestão</a></p>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

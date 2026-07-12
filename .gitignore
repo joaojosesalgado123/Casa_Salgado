@@ -1,0 +1,15 @@
+.idea
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Variáveis de ambiente
+.env

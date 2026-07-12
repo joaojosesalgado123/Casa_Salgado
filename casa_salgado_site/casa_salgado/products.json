@@ -1,0 +1,101 @@
+{
+  "atualizado": "2026-07-12",
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Dobradiças de latão",
+      "categoria": "Ferragens",
+      "preco": "2,50 € / par",
+      "descricao": "Várias medidas disponíveis. Ideais para portas de móveis e armários.",
+      "disponivel": true
+    },
+    {
+      "id": 2,
+      "nome": "Fechadura de embutir",
+      "categoria": "Ferragens",
+      "preco": "12,90 €",
+      "descricao": "Para portas interiores, com chave. Montagem simples.",
+      "disponivel": true
+    },
+    {
+      "id": 3,
+      "nome": "Parafusos e buchas a avulso",
+      "categoria": "Ferragens",
+      "preco": "desde 0,05 €",
+      "descricao": "Vendemos à unidade, como antigamente. Traga a medida ou o exemplo.",
+      "disponivel": true
+    },
+    {
+      "id": 4,
+      "nome": "Puxadores de porta em latão",
+      "categoria": "Ferragens",
+      "preco": "8,50 €",
+      "descricao": "Modelos clássicos, em latão polido ou envelhecido.",
+      "disponivel": true
+    },
+    {
+      "id": 5,
+      "nome": "Varão de cortinado em madeira",
+      "categoria": "Cortinados",
+      "preco": "15,00 €",
+      "descricao": "Madeira maciça, cortado à medida na loja.",
+      "disponivel": true
+    },
+    {
+      "id": 6,
+      "nome": "Terminais de madeira torneada",
+      "categoria": "Cortinados",
+      "preco": "4,00 € / par",
+      "descricao": "Remates torneados para varões, em vários feitios.",
+      "disponivel": true
+    },
+    {
+      "id": 7,
+      "nome": "Argolas, calhas e acessórios",
+      "categoria": "Cortinados",
+      "preco": "desde 1,20 €",
+      "descricao": "Tudo para montar ou reparar o seu cortinado.",
+      "disponivel": true
+    },
+    {
+      "id": 8,
+      "nome": "Cera para móveis",
+      "categoria": "Drogaria",
+      "preco": "6,50 €",
+      "descricao": "Para dar vida à madeira antiga. Tons natural e nogueira.",
+      "disponivel": true
+    },
+    {
+      "id": 9,
+      "nome": "Aguarrás e diluentes",
+      "categoria": "Drogaria",
+      "preco": "3,80 €",
+      "descricao": "Embalagens de vários tamanhos.",
+      "disponivel": true
+    },
+    {
+      "id": 10,
+      "nome": "Cola de contacto",
+      "categoria": "Drogaria",
+      "preco": "4,20 €",
+      "descricao": "Para madeira, couro, borracha e fórmica.",
+      "disponivel": true
+    },
+    {
+      "id": 11,
+      "nome": "Serrote de costa",
+      "categoria": "Ferramentas",
+      "preco": "14,50 €",
+      "descricao": "O símbolo da casa. Corte fino e preciso para trabalhos de carpintaria.",
+      "disponivel": true
+    },
+    {
+      "id": 12,
+      "nome": "Martelo de orelhas",
+      "categoria": "Ferramentas",
+      "preco": "9,90 €",
+      "descricao": "Cabo de madeira, cabeça forjada. Uma ferramenta para a vida.",
+      "disponivel": true
+    }
+  ]
+}

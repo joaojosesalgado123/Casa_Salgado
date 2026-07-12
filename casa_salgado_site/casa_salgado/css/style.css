@@ -1,0 +1,497 @@
+/* ==========================================================
+   CASA SALGADO — Ferragens e Drogaria, Viana do Castelo
+   Paleta tirada da própria fachada:
+   - esmalte do letreiro, tinta preta, madeira oxidada
+     das molduras, granito da rua, latão da montra
+   ========================================================== */
+
+:root {
+  --tinta: #1b1713;          /* preto do letreiro */
+  --esmalte: #f3efe3;        /* fundo, branco-esmalte envelhecido */
+  --papel: #fbf9f1;          /* cartões */
+  --oxido: #7e3327;          /* vermelho-madeira das molduras */
+  --oxido-escuro: #5f261c;
+  --granito: #a9a296;        /* pedra da fachada */
+  --granito-escuro: #6f6a5f;
+  --latao: #a97f2f;          /* puxadores de latão da montra */
+  --verde-aberto: #2e6b3f;
+
+  --fonte-script: "Yellowtail", cursive;
+  --fonte-base: "Archivo", system-ui, sans-serif;
+  --fonte-mono: "IBM Plex Mono", monospace;
+
+  --sombra: 0 2px 0 rgba(27, 23, 19, 0.9);
+  --raio: 4px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--esmalte);
+  color: var(--tinta);
+  font-family: var(--fonte-base);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--oxido); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--latao);
+  outline-offset: 2px;
+}
+
+.contentor {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Divisória em dente de serrote ---------- */
+.dentes {
+  height: 12px;
+  background:
+    linear-gradient(135deg, var(--tinta) 25%, transparent 25%) 0 0 / 16px 12px repeat-x,
+    linear-gradient(225deg, var(--tinta) 25%, transparent 25%) 0 0 / 16px 12px repeat-x;
+}
+.dentes--oxido {
+  background:
+    linear-gradient(135deg, var(--oxido) 25%, transparent 25%) 0 0 / 16px 12px repeat-x,
+    linear-gradient(225deg, var(--oxido) 25%, transparent 25%) 0 0 / 16px 12px repeat-x;
+}
+
+/* ---------- Cabeçalho / navegação ---------- */
+.nav {
+  background: var(--tinta);
+  color: var(--esmalte);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 4px solid var(--oxido);
+}
+.nav__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.nav__marca {
+  font-family: var(--fonte-script);
+  font-size: 1.6rem;
+  color: var(--esmalte);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav__ligacoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.nav__ligacoes a {
+  color: var(--esmalte);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  padding: 4px 0;
+}
+.nav__ligacoes a:hover { border-bottom-color: var(--latao); }
+
+/* ---------- Herói: o letreiro esmaltado ---------- */
+.heroi {
+  background:
+    radial-gradient(ellipse at 50% -20%, #8b857a 0%, var(--granito) 45%, #938d80 100%);
+  padding: 64px 20px 72px;
+  text-align: center;
+}
+.letreiro {
+  background: var(--papel);
+  border: 3px solid var(--tinta);
+  box-shadow: 6px 6px 0 rgba(27, 23, 19, 0.35);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px 28px 30px;
+}
+.letreiro svg { width: 100%; height: auto; }
+.heroi__lema {
+  margin: 26px auto 0;
+  max-width: 560px;
+  color: var(--tinta);
+  background: var(--esmalte);
+  display: inline-block;
+  padding: 8px 18px;
+  border: 2px solid var(--tinta);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.heroi__desde {
+  font-family: var(--fonte-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  margin-top: 18px;
+}
+
+/* ---------- Barra de informação rápida ---------- */
+.barra-info {
+  background: var(--oxido);
+  color: var(--esmalte);
+}
+.barra-info__interior {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px 28px;
+}
+.barra-info__item strong {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e8c98a;
+  margin-bottom: 2px;
+}
+.barra-info__item a { color: var(--esmalte); }
+
+/* ---------- Secções ---------- */
+.seccao { padding: 64px 0; }
+.seccao--papel { background: var(--papel); }
+
+.seccao__titulo {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+}
+.seccao__titulo .script {
+  font-family: var(--fonte-script);
+  text-transform: none;
+  font-weight: 400;
+  color: var(--oxido);
+}
+.seccao__sub {
+  color: var(--granito-escuro);
+  margin: 0 0 32px;
+  max-width: 640px;
+}
+
+/* ---------- Catálogo ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.filtros button {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  cursor: pointer;
+  box-shadow: var(--sombra);
+}
+.filtros button:hover { background: var(--esmalte); }
+.filtros button.ativo {
+  background: var(--tinta);
+  color: var(--esmalte);
+}
+
+.grelha-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Cartão de produto = etiqueta de gaveta de ferragens */
+.produto {
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  box-shadow: 4px 4px 0 rgba(27, 23, 19, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+.produto__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed var(--granito);
+  padding: 8px 14px;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--granito-escuro);
+}
+.produto__corpo { padding: 14px 14px 16px; flex: 1; }
+.produto__nome {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.produto__descricao {
+  font-size: 0.92rem;
+  color: #46413a;
+  margin: 0;
+}
+.produto__preco {
+  border-top: 2px solid var(--tinta);
+  padding: 10px 14px;
+  font-family: var(--fonte-mono);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.produto__estado {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+}
+.produto__estado--sim { color: var(--verde-aberto); }
+.produto__estado--nao { color: var(--oxido); }
+.produto--esgotado { opacity: 0.65; }
+
+.aviso-catalogo {
+  margin-top: 28px;
+  font-size: 0.95rem;
+  color: var(--granito-escuro);
+}
+
+/* ---------- História ---------- */
+.historia {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+.historia__foto {
+  border: 3px solid var(--tinta);
+  box-shadow: 8px 8px 0 var(--oxido);
+}
+@media (max-width: 760px) {
+  .historia { grid-template-columns: 1fr; }
+}
+
+/* ---------- Contactos e mapa ---------- */
+.contactos {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
+}
+@media (max-width: 760px) {
+  .contactos { grid-template-columns: 1fr; }
+}
+.ficha {
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  padding: 22px;
+  box-shadow: 4px 4px 0 rgba(27, 23, 19, 0.18);
+}
+.ficha h3 {
+  margin: 0 0 4px;
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oxido);
+}
+.ficha p, .ficha ul { margin: 0 0 18px; }
+.ficha ul { padding-left: 0; list-style: none; }
+.ficha li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--granito);
+  font-size: 0.95rem;
+}
+.ficha li span:last-child { font-family: var(--fonte-mono); }
+.mapa {
+  border: 3px solid var(--tinta);
+  box-shadow: 8px 8px 0 var(--granito);
+  min-height: 340px;
+}
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  display: block;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--tinta);
+  color: var(--granito);
+  padding: 28px 20px 36px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.rodape .script {
+  font-family: var(--fonte-script);
+  color: var(--esmalte);
+  font-size: 1.3rem;
+}
+.rodape a { color: var(--granito); }
+
+/* ==========================================================
+   PÁGINA DE GESTÃO — pensada para ser usada com letras
+   grandes e botões óbvios
+   ========================================================== */
+.gestao body,
+body.gestao { font-size: 19px; }
+
+.gestao-cabecalho {
+  background: var(--tinta);
+  color: var(--esmalte);
+  padding: 18px 20px;
+  border-bottom: 4px solid var(--oxido);
+}
+.gestao-cabecalho .contentor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gestao-cabecalho h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.gestao-cabecalho h1 .script {
+  font-family: var(--fonte-script);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.painel {
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 4px 4px 0 rgba(27, 23, 19, 0.15);
+}
+.painel h2 { margin-top: 0; }
+
+.campo { margin-bottom: 18px; }
+.campo label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.campo input[type="text"],
+.campo input[type="password"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  font-size: 1.05rem;
+  font-family: var(--fonte-base);
+  padding: 12px 14px;
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  background: #fff;
+}
+.campo .ajuda {
+  font-size: 0.88rem;
+  color: var(--granito-escuro);
+  margin-top: 4px;
+}
+
+.botao {
+  font-family: var(--fonte-base);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 22px;
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  background: var(--papel);
+}
+.botao:hover { filter: brightness(0.96); }
+.botao--principal { background: var(--verde-aberto); color: #fff; border-color: #1d472a; }
+.botao--secundario { background: var(--esmalte); }
+.botao--perigo { background: var(--oxido); color: #fff; border-color: #4a1d15; }
+.botao--grande { font-size: 1.15rem; padding: 16px 28px; }
+.botao:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.lista-gestao { display: grid; gap: 14px; }
+.item-gestao {
+  background: #fff;
+  border: 2px solid var(--tinta);
+  border-radius: var(--raio);
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.item-gestao__info strong { font-size: 1.1rem; }
+.item-gestao__info .meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--granito-escuro);
+}
+.item-gestao__acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+.item-gestao--esgotado { background: #f4ece7; }
+
+.estado-msg {
+  padding: 14px 18px;
+  border-radius: var(--raio);
+  border: 2px solid var(--tinta);
+  margin: 18px 0;
+  font-weight: 600;
+  display: none;
+}
+.estado-msg--ok { display: block; background: #e4f0e6; border-color: var(--verde-aberto); }
+.estado-msg--erro { display: block; background: #f6e2dd; border-color: var(--oxido); }
+.estado-msg--info { display: block; background: #eef; border-color: var(--granito-escuro); }
+
+.barra-acoes {
+  position: sticky;
+  bottom: 0;
+  background: var(--esmalte);
+  border-top: 3px solid var(--tinta);
+  padding: 14px 0;
+}
+.barra-acoes .contentor {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}

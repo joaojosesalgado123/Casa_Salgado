@@ -11,5 +11,8 @@ desktop.ini
 # Node
 node_modules/
 
+# Base de dados
+data/
+
 # Variáveis de ambiente
 .env

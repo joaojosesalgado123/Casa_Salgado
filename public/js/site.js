@@ -1,7 +1,7 @@
 /* Casa Salgado — site público
-   Carrega os produtos de products.json e desenha o catálogo.
-   Se o ficheiro não puder ser lido (por ex. ao abrir o index.html
-   diretamente do disco), usa uma lista de reserva para nada ficar vazio. */
+   Carrega os produtos da API (/api/produtos) e desenha o catálogo.
+   Se a API não responder (por ex. ao abrir o index.html diretamente
+   do disco), usa uma lista de reserva para nada ficar vazio. */
 
 (function () {
   "use strict";
@@ -122,7 +122,7 @@
 
   horarioDeHoje();
 
-  fetch("products.json", { cache: "no-store" })
+  fetch("/api/produtos", { cache: "no-store" })
     .then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();

@@ -23,25 +23,27 @@
 
     <div class="estado-msg" id="mensagem" role="status" aria-live="polite"></div>
 
-    <!-- Passo 1: ligação ao GitHub (só é preciso configurar uma vez) -->
-    <section class="painel" id="painelConfig">
-      <h2>1. Ligação (só na primeira vez)</h2>
-      <p>Para as alterações aparecerem no site, esta página precisa de uma chave de acesso. Peça ajuda ao João para a criar — depois fica guardada neste computador.</p>
+    <!-- Entrada: password da loja -->
+    <section class="painel" id="painelLogin" hidden>
+      <h2>Iniciar sessão</h2>
+      <p>Escreva a password da loja para poder alterar os produtos do site.</p>
       <div class="campo">
-        <label for="campoToken">Chave de acesso (token do GitHub)</label>
-        <input type="password" id="campoToken" autocomplete="off" placeholder="github_pat_..." />
-        <p class="ajuda">Guardada apenas neste computador. Nunca a envie por e-mail nem a mostre a estranhos.</p>
+        <label for="campoSenha">Password da loja</label>
+        <input type="password" id="campoSenha" autocomplete="current-password" />
+        <p class="ajuda">Se não se lembrar da password, pergunte ao João.</p>
       </div>
-      <button class="botao botao--principal" id="botaoGuardarToken">Guardar a chave</button>
-      <button class="botao botao--secundario" id="botaoApagarToken">Apagar a chave deste computador</button>
+      <button class="botao botao--principal botao--grande" id="botaoEntrar">Entrar</button>
     </section>
 
-    <!-- Passo 2: os produtos -->
-    <section class="painel">
-      <h2>2. Os produtos da loja</h2>
-      <p>Aqui pode acrescentar, alterar ou apagar produtos. No fim, carregue no botão verde em baixo para os enviar para o site.</p>
+    <!-- Os produtos (só aparece com sessão iniciada) -->
+    <section class="painel" id="painelProdutos" hidden>
+      <h2>Os produtos da loja</h2>
+      <p>Aqui pode acrescentar, alterar ou apagar produtos. As alterações ficam logo no site — não é preciso mais nada.</p>
       <button class="botao botao--principal botao--grande" id="botaoNovo">➕ Acrescentar produto</button>
       <div class="lista-gestao" id="listaProdutos" style="margin-top:20px"></div>
+      <p style="margin-top:24px">
+        <button class="botao botao--secundario" id="botaoSair">Sair da gestão</button>
+      </p>
     </section>
 
     <!-- Formulário de produto (aparece ao acrescentar/alterar) -->
@@ -82,16 +84,6 @@
     </section>
 
   </main>
-
-  <!-- Barra fixa em baixo com o botão de publicar -->
-  <div class="barra-acoes">
-    <div class="contentor">
-      <span id="resumoAlteracoes">Sem alterações por enviar.</span>
-      <button class="botao botao--principal botao--grande" id="botaoPublicar" disabled>
-        💾 Guardar alterações no site
-      </button>
-    </div>
-  </div>
 
   <script src="js/gestao.js"></script>
 </body>

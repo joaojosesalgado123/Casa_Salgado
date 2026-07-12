@@ -1,0 +1,19 @@
+{
+  "name": "casa-salgado",
+  "version": "1.0.0",
+  "description": "Site e gestão de produtos da Casa Salgado (ferragens e drogaria, Viana do Castelo)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.11.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
